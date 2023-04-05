@@ -1,21 +1,21 @@
 <div class="card">
   <div class="card-header">creer notification</div>
   <div class="card-body">
-    <div class="form-groupe">trimestre
-      <label for="trimestre"></label>
+    <div class="form-groupe">
+      <label for="trimestre">trimestre</label>
       <input id = "trimestre" type="text" class="form-control" [(ngModel)]="notif.trimestre">
     </div>
-    <div class="form-groupe">annee
-      <label for="annee"></label>
+    <div class="form-groupe">
+      <label for="annee">annee</label>
       <input id = "annee" type="text" class="form-control" [(ngModel)]="notif.annee">
     </div>
-    <div class="form-groupe">numero
-      <label for="numero"></label>
+    <div class="form-groupe">
+      <label for="numero">numero</label>
       <input id = "numero" type="text" class="form-control" [(ngModel)]="notif.numero">
     </div>
 
   </div>
   <div class="card-footer">
-    <button class="btn btn-success" (click)="creerNotif()">valider</button>
+    <button class="btn btn-success" (click)="saveNotif()">valider</button>
   </div>
 </div>

@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { NotificationlocaleCreateComponent } from './view/notificationlocale/notificationlocale-create/notificationlocale-create.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
+import { NotificationlocaleListeComponent } from './view/notificationlocale/notificationlocale-liste/notificationlocale-liste.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotificationlocaleCreateComponent
+    NotificationlocaleCreateComponent,
+    NotificationlocaleListeComponent
   ],
     imports: [
         BrowserModule,

@@ -9,7 +9,9 @@ import {Notif} from "../model/notif";
 })
 export class NotificationLocaleService {
   private _notificationlocale= new NotificationLocale() ;
+  private _notificationlocales= new Array<NotificationLocale>;
   private _url = 'http://localhost:8036/api/v1/notificationLocal/';
+  private _url2 = 'http://localhost:8036/api/v1/notification/';
 
   constructor(private http: HttpClient) {}
   get notificationlocale(): NotificationLocale {
@@ -19,6 +21,7 @@ export class NotificationLocaleService {
     return this._notificationlocale;
   }
 
+
   set notificationlocale(value: NotificationLocale) {
     this._notificationlocale = value;
   }
@@ -27,8 +30,21 @@ export class NotificationLocaleService {
     return this.http.post<number>(this._url, notif);
   }
 
+  public saveNotif(notif: Notif): Observable<number>{
+    return this.http.post<number>(this._url2, notif);
+  }
+  public findAll(): Observable<Array<NotificationLocale>>{
+    return this.http.get<Array<NotificationLocale>>(this._url);
+  }
 
+  get notificationlocales(): NotificationLocale[] {
+    if(this._notificationlocales == null){
+      this._notificationlocales = new Array<NotificationLocale>();
+    }
+    return this._notificationlocales;
+  }
 
-
-
+  set notificationlocales(value: NotificationLocale[]) {
+    this._notificationlocales = value;
+  }
 }
