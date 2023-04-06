@@ -4,8 +4,6 @@ export class NotificationLocale {
   public ref: string = "";
   public mtBaseEstime: number=0;
   public methodEstime: string="";
-  public nomRedevable: string="";
-  public refLocal: string="";
   public redevable: string="";
 
 }

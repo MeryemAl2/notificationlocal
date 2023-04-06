@@ -18,29 +18,35 @@ export class NotificationlocaleCreateComponent {
 
 
   public saveNotif(): void {
-    this.notificationlocaleservice.saveNotif(this.notif).subscribe((resp: number) => {
-      if (resp == 1) {
+    this.notificationlocaleservice.saveNotif(this.notif).subscribe((respn: number) => {
+      if (respn == 1) {
         this.notificationlocaleservice.creernotifs(this.notif).subscribe((resp: number) => {
-          if (resp != 1) {
-            this.result = "notification dupliquee";
+          if (resp == 1) {
+            alert("saved");
+            this.notificationlocaleservice.findAll().subscribe(data=> this.notificationlocales=data);
           }
+
+          if (resp == -3) {
+            alert("locals n'existe pas");
+          }
+          if (resp == -2) {
+            alert("notification est deja enregestrer");
+          }
+          if (resp == -1) {
+            alert("notification n'existe pas") ;
+          }
+
+          if (resp == -4) {
+            alert("redevable n'existe pas");
+          }
+
         })
-        alert("saved");
-      }
-      if (resp == -3) {
-        alert("locals n'existe pas");
-      }
-      if (resp == -2) {
-        alert("notification est deja envoyee");
-      }
-      if (resp == -1) {
-        alert("notification == 0") ;
+
+      }else{
+        this.result = "notification dupliquee";
       }
 
-      if (resp == -4) {
-        alert("redevable n'existe pas");
-      }
-      this.notificationlocales.push({...this.notificationlocale});
+      //this.notificationlocales.push({...this.notificationlocale});
     })
   }
 
