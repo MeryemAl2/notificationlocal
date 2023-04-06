@@ -30,7 +30,7 @@ export class NotificationlocaleCreateComponent {
             alert("locals n'existe pas");
           }
           if (resp == -2) {
-            alert("notification est deja enregestrer");
+            alert("notification deja enregistrée");
           }
           if (resp == -1) {
             alert("notification n'existe pas") ;
