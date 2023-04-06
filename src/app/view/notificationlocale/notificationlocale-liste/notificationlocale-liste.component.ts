@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {NotificationLocaleService} from "../../../controler/service/notification-locale.service";
-import {NotificationLocale} from "../../../controler/model/notificationLocale";
+import {NotificationLocaleService} from "src/app/controler/service/notification-locale.service";
+import {NotificationLocale} from "src/app/controler/model/notificationLocale";
 
 @Component({
   selector: 'app-notificationlocale-liste',
@@ -8,6 +8,7 @@ import {NotificationLocale} from "../../../controler/model/notificationLocale";
   styleUrls: ['./notificationlocale-liste.component.css']
 })
 export class NotificationlocaleListeComponent implements OnInit{
+  notifs:any;
 
   constructor(private _notificationlocaleservice: NotificationLocaleService) {
   }
@@ -16,7 +17,7 @@ export class NotificationlocaleListeComponent implements OnInit{
         this.findAll();
     }
   public findAll(): void{
-    this._notificationlocaleservice.findAll().subscribe(data=> this.notificationlocales = data);
+    this._notificationlocaleservice.findAll().subscribe(data=> this.notifs = data);
   }
 
   get notificationlocale(): NotificationLocale {

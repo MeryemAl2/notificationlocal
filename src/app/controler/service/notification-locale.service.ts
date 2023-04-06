@@ -10,7 +10,7 @@ import {Notif} from "../model/notif";
 export class NotificationLocaleService {
   private _notificationlocale= new NotificationLocale() ;
   private _notificationlocales = new Array<NotificationLocale>;
-  private _url = 'http://localhost:8036/api/v1/notificationlocale/';
+  private _url = 'http://localhost:8036/api/v1/notificationLocal/';
   private _url2 = 'http://localhost:8036/api/v1/notification/';
 
   constructor(private http: HttpClient) {}

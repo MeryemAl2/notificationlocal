@@ -4,13 +4,17 @@
   <th>reference</th>
   <th>mtBaseEstime</th>
   <th>methodEstime</th>
+  <th>redeveble</th>
+  <th>local</th>
   </thead>
   <tbody>
-  <tr *ngFor="let c of notificationlocales">
+  <tr *ngFor="let c of notifs">
     <td>{{c.id}}</td>
-    <td>{{c.reference}}</td>
+    <td>{{c.ref}}</td>
     <td>{{c.mtBaseEstime}}</td>
     <td>{{c.methodEstime}}</td>
+    <td>{{c.redevable.nom}}</td>
+    <td>{{c.locale.ref}}</td>
   </tr>
   </tbody>
 </table>

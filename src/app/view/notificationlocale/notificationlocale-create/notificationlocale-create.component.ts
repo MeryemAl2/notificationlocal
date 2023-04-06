@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NotificationLocale} from "../../../controler/model/notificationLocale";
 import {NotificationLocaleService} from "src/app/controler/service/notification-locale.service";
-import {Notif} from "../../../controler/model/notif";
+import {Notif} from "src/app/controler/model/notif";
 
 @Component({
   selector: 'app-notificationlocale-create',
